@@ -85,5 +85,5 @@ game.onUpdateInterval(2000, function () {
         `, SpriteKind.Enemy)
     enemyShip.x = scene.screenWidth()
     enemyShip.vx = -30
-    enemyShip.y = randint(20, scene.screenHeight() - 10)
+    enemyShip.y = randint(20, scene.screenHeight() - 4)
 })
