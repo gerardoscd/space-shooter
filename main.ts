@@ -61,13 +61,13 @@ spaceShip = sprites.create(img`
 controller.moveSprite(spaceShip)
 spaceShip.setStayInScreen(true)
 info.setLife(5)
-let Enemy_speed = 10
-let enemySpawnTime = 5000
+let enemySpeed = 10
+let enemySpawnTime = 2000
 game.onUpdateInterval(5000, function () {
-    Enemy_speed += 5
-    Enemy_speed = Math.min(Enemy_speed, 80)
-    enemySpawnTime += -200
-    enemySpawnTime = Math.max(Enemy_speed, 500)
+    enemySpeed += 5
+    enemySpeed = Math.min(enemySpeed, 50)
+    enemySpawnTime += -500
+    enemySpawnTime = Math.max(enemySpawnTime, 500)
 })
 forever(function () {
     enemyShip = sprites.create(img`
@@ -97,8 +97,8 @@ forever(function () {
         ........................
         `, SpriteKind.Enemy)
     enemyShip.x = scene.screenWidth()
-    enemyShip.vx = 0 - Enemy_speed
-    enemyShip.y = randint(20, scene.screenHeight() - 4)
+    enemyShip.vx = 0 - enemySpeed
+    enemyShip.y = randint(10, scene.screenHeight() - 4)
     statusbar = statusbars.create(15, 4, StatusBarKind.EnemyHealth)
     statusbar.setColor(4, 2)
     statusbar.setLabel("HP")
